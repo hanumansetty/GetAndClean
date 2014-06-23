@@ -46,8 +46,9 @@ actLble<-read.table("./activity_labels.txt")
 
 # Add descriptions to reference table for activities
 #3. Uses descriptive activity names to name the activities in the data set
-allLableDetails<-merge(actLble,allRawLablesDf,by.x="V1",by.y="activityId")
+allLableDetails<-merge(allRawLablesDf,actLble,by.x="activityId",by.y="V1",sort=FALSE)
+names(allLableDetails)<-c("activityId","activityName")
 
-cleanDataset1<-merge(allLableDetails,allRawDataDf,by.x="V1",by.y="activityId")
+cleanDataset1<-cbind(allLableDetails,allRawDataDf)
 
-write.table(cleanDataset1,"./cleanData.txt")
+write.table(cleanDataset1[c(2,4:82)],"./cleanData.txt")
