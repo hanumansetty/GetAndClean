@@ -19,7 +19,7 @@ cNames<-read.table("./features.txt")
 
 # set column names for test and train datasets to combine
 names(testRawDf)<-cNames[,2]
-names(trainRawDf)<-cNames
+names(trainRawDf)<-cNames[,2]
 
 # merge test and train datasets
 allRawDataDf<-rbind(testRawDf,trainRawDf)
