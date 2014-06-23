@@ -11,25 +11,29 @@ testLablesDf<-read.table("./y_test.txt")
 trainRawDf<-read.table("./X_train.txt")
 trainLablesDf<-read.table("./y_train.txt")
 
-# read the reference table for activities
-actLble<-read.table("./activity_labels.txt")
-
 # read the reference table for column names
 cNames<-read.table("./features.txt")
 
 # set column names for test and train datasets to combine
+#4. Appropriately labels the data set with descriptive variable names
 names(testRawDf)<-cNames[,2]
 names(trainRawDf)<-cNames[,2]
 
-# merge test and train datasets
+#1 Merges the training and the test sets to create one data set.
 allRawDataDf<-rbind(testRawDf,trainRawDf)
 
 # set activityId as the variable Name for the lables
 names(testLablesDf)<-c("activityId")
 names(trainLablesDf)<-c("activityId")
 
-# merge test and train datasets
+# merge test and train lables
 allRawLablesDf<-rbind(testLablesDf,trainLablesDf)
 
 # bind activity to data
 allRawDataDf<-cbind(allRawLablesDf,allRawDataDf)
+
+# read the reference table for activities
+actLble<-read.table("./activity_labels.txt")
+
+# Add descriptions to reference table for activities
+allLableDetails<-merge(actLble,allRawLablesDf,by.x="V1",by.y="activityId")
