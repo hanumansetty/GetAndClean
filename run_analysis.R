@@ -49,3 +49,5 @@ actLble<-read.table("./activity_labels.txt")
 allLableDetails<-merge(actLble,allRawLablesDf,by.x="V1",by.y="activityId")
 
 cleanDataset1<-merge(allLableDetails,allRawDataDf,by.x="V1",by.y="activityId")
+
+write.table(cleanDataset1,"./cleanData.txt")
