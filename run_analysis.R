@@ -3,6 +3,7 @@
 # c3w3p3Url<-"https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 # download.file(c3w3p3Url,"./Dataset.zip",mode="wb")
 
+# Read raw test data
 testRawDf<-read.table("./X_test.txt")
 testLablesDf<-read.table("./y_test.txt")
 
@@ -44,4 +45,7 @@ allRawDataDf<-cbind(allRawLablesDf,allRawDataDf)
 actLble<-read.table("./activity_labels.txt")
 
 # Add descriptions to reference table for activities
+#3. Uses descriptive activity names to name the activities in the data set
 allLableDetails<-merge(actLble,allRawLablesDf,by.x="V1",by.y="activityId")
+
+cleanDataset1<-merge(allLableDetails,allRawDataDf,by.x="V1",by.y="activityId")
