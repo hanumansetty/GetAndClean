@@ -36,11 +36,17 @@ CleanData.txt has 80 data elements from the experiments carried out with a group
 #	tGravityAcc-std()-Z
 -Standard Deviation value of the time of gravity acceleration signal along Z coordinate
 #	tBodyAccJerk-mean()-X
+-The mean of body linear acceleration and angular velocity that were derived in time to obtain Jerk signals along X coordinate
 #	tBodyAccJerk-mean()-Y
+-The mean of body linear acceleration and angular velocity that were derived in time to obtain Jerk signals along Y coordinate
 #	tBodyAccJerk-mean()-Z
+-The mean of body linear acceleration and angular velocity that were derived in time to obtain Jerk signals along Z coordinate
 #	tBodyAccJerk-std()-X
+-The standard deviation of body linear acceleration and angular velocity that were derived in time to obtain Jerk signals along X coordinate
 #	tBodyAccJerk-std()-Y
+-The standard deviation of body linear acceleration and angular velocity that were derived in time to obtain Jerk signals along Y coordinate
 #	tBodyAccJerk-std()-Z
+-The standard deviation of body linear acceleration and angular velocity that were derived in time to obtain Jerk signals along Z coordinate
 #	tBodyGyro-mean()-X
 #	tBodyGyro-mean()-Y
 #	tBodyGyro-mean()-Z
